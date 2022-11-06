@@ -1,28 +1,24 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
-import { base_url } from "../env/globals"
 import Layout from "../components/Layout";
 
 export default function Index() {
 
   const { t } = useTranslation();  // used for showing
-  const { language, changeLanguage } = useI18next();
-
+ 
   return ( 
     <Layout>
       <p>
-        <h1>{t("home")}</h1>
+        <h1>{t("portfolio")}</h1>
       </p>
       <p>
-        <ul>
-          <li onClick={() => { changeLanguage('en') }} >EN</li>
-          <li onClick={() => { changeLanguage('es') }} >ES</li>
-        </ul>
+        TODO
       </p>
     </Layout>
   )
+  
 }
 
 

@@ -1,0 +1,7 @@
+{
+    "home": "My home",
+    "portfolio": "Portfolio",
+    "cv": "C.V.",
+    "contact": "Contact",
+    "powered_by": "Powered by React, Gatsby, I18next, CSS grid, and coffee"
+}

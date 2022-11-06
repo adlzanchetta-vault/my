@@ -1,0 +1,54 @@
+/* header - flex */
+header {
+    width: inherit;
+    border-bottom: 1px #CCCCEE solid;
+    background-color: #efefef;
+}
+
+header div.container {
+    max-width: 1024px;  /* avoid using px, use em instead */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* we will used flex grid, 3-columns equally spaced */
+    margin: auto;
+}
+
+header div.container h1 {
+    font-size: 1.2em;
+    line-height: 1.57em;
+    grid-column: 1;      /* position */
+    justify-self: left;  /* position */
+}
+
+header div.container nav {
+    font-size: 1.2em;
+    grid-column: 2;
+    justify-self: end;
+    justify-content: end;
+}
+
+header div.container nav div.menu ul {
+    display: flex;          /* instead of the regular vertical listing, moves to horizontal listing */
+    list-style-type: none;  /* Remove bullets */
+    margin: 0;
+}
+
+header div.container nav div.menu ul li {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+}
+
+header div.container nav div.menu ul li a {
+    color: #222222;
+}
+
+header div.container nav div.menu ul li a:hover {
+    color: #222277;
+}
+
+header div.container nav div.menu-list-icon {
+    display: none;      /* for large screens the button is not shown */
+    text-align: right;
+}

@@ -1,0 +1,7 @@
+{
+    "home": "Mi casa",
+    "portfolio": "Portafolio",
+    "cv": "C.V.",
+    "contact": "Contacto",
+    "powered_by": "Movido a React, Gatsby, I18next, CSS grid, y café."
+}
