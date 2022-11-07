@@ -4,7 +4,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../components/Layout";
 
-export default function Index() {
+export default function Portfolio() {
 
   const { t } = useTranslation();  // used for showing
  
