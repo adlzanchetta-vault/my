@@ -2,15 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
-export default function FooterGrid() {
+export default function Footer() {
 
     const { t } = useTranslation();
 
     return (
         <footer>
-            <div>
-                {t("powered_by")}
-            </div>
+          <div className="content">
+            {t("powered_by")}
+          </div>
         </footer>
     );
 

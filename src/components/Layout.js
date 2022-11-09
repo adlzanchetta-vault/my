@@ -1,8 +1,9 @@
 import React from "react";
 import HeaderGrid from "./HeaderGrid";
-import FooterGrid from "./FooterGrid";
+import FooterGrid from "./Footer";
 
 import "../styles/global.css";
+import "../styles/layout.css";
 
 export default function Layout( { children } ) {
 

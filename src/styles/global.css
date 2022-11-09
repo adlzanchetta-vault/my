@@ -5,8 +5,14 @@
 }
 
 html, body {
+    width: 100%;
     min-height: 100%;
     background-color: #dddddd;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
 }
 
 /* */
@@ -21,15 +27,4 @@ html, body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-}
-
-main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-main div.content {
-    max-width: 1024px;  /* avoid using px, use TODO instead */
-    margin: auto;
-    grid-column: 2;
 }

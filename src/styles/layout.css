@@ -1,0 +1,38 @@
+main {
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+main div.content {
+    width: 50em;
+    max-width: 50em;  /* avoid using px, use TODO instead */
+    margin: auto;
+    display: inline-block;
+    border: 0px red solid;
+    background-color: #efefef;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    justify-self: flex-end;
+}
+
+footer div.content {
+    width: 50em;
+    max-width: 50em;  /* avoid using px, use TODO instead */
+    margin: auto;
+    display: inline-block;
+    border: 0px red solid;
+    text-align: right;
+}
+
+@media screen and (max-width: 50em) {
+
+    main div.content {
+        width: 95%;
+        max-width: 95%;  /* avoid using px, use TODO instead */
+    }
+}
