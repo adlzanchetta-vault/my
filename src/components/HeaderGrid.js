@@ -18,11 +18,19 @@ function PagesListing () {
 function LanguageListing () {
   const { changeLanguage } = useI18next();
 
+  const loggedLangChange = (lang) => {
+    return () => {
+      console.log(`Triggering ${lang}...`);
+      changeLanguage(lang);
+      console.log(` ...${lang} triggered.`);
+    }
+  }
+
   return (<ul className="menu-language-list">
-    <li onClick={() => { changeLanguage('en') }} >ENG</li>
-    <li onClick={() => { changeLanguage('fr') }} >FRA</li>
-    <li onClick={() => { changeLanguage('es') }} >ESP</li>
-    <li onClick={() => { changeLanguage('pt') }} >POR</li>
+    <li key="liChangeLanguageENG" onClick={loggedLangChange('en')} >ENG</li>
+    <li key="liChangeLanguageFRA" onClick={loggedLangChange('fr')} >FRA</li>
+    <li key="liChangeLanguageESP" onClick={loggedLangChange('es')} >ESP</li>
+    <li key="liChangeLanguagePOR" onClick={loggedLangChange('pt')} >POR</li>
   </ul>);
 }
 

@@ -14,9 +14,7 @@ export default function Page() {
   return ( 
     <Layout>
       <img src={`${base_url}imgs/andre_horizontal.jpg`} className="home_pic" alt="Andre's face" />
-      <p>
-        <h1>{t("home")}</h1>
-      </p>
+      <h1>{t("home")}</h1>
       <p>
         {t("home_content")}
       </p>
