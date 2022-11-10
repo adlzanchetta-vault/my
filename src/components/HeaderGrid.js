@@ -1,19 +1,36 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 
 import { base_url } from "../env/globals";
 import "../styles/header_grid.css";
 
+function PagesListing () {
+  const { t } = useTranslation();
+
+  return (<ul className="menu-pages-list">
+    <li><a href={`${base_url}portfolio`}>{t("portfolio")}</a></li>
+    <li><a href={`${base_url}cv`}>{t("cv")}</a></li>
+    <li><a href={`${base_url}contact`}>{t("contact")}</a></li>
+  </ul>);
+}
+
+function LanguageListing () {
+  const { changeLanguage } = useI18next();
+
+  return (<ul className="menu-language-list">
+    <li onClick={() => { changeLanguage('en') }} >ENG</li>
+    <li onClick={() => { changeLanguage('fr') }} >FRA</li>
+    <li onClick={() => { changeLanguage('es') }} >ESP</li>
+    <li onClick={() => { changeLanguage('pt') }} >POR</li>
+  </ul>);
+}
+
 export default function HeaderGrid() {
 
   // set up hooks
-  const [menuActive, setMenuActive] = useState(false);
-  const { t } = useTranslation();
+  const { language } = useI18next();
 
-  const menuListIconClick = () => {
-    
-  }
 
   return (
     <header>
@@ -24,21 +41,13 @@ export default function HeaderGrid() {
           </a>
         </h1>
         <nav>
-          <div className={`menu ${menuActive ? 'active': ''} `}>
-            <ul>
-              <li>
-                <a href={`${base_url}portfolio`}>{t("portfolio")}</a>
-              </li>
-              <li>
-                <a href={`${base_url}cv`}>{t("cv")}</a>
-              </li>
-              <li>
-                <a href={`${base_url}contact`}>{t("contact")}</a>
-              </li>
-            </ul>
-          </div>
-          <div className="menu-list-icon" onClick={ menuListIconClick } >
+          <div className="menu-pages" >
             Menu
+            <PagesListing />
+          </div>
+          <div className="menu-language" >
+            {language.toUpperCase()}
+            <LanguageListing />
           </div>
         </nav>
       </div>

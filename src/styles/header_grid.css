@@ -26,29 +26,58 @@ header div.container nav {
     justify-content: end;
 }
 
-header div.container nav div.menu ul {
-    display: flex;          /* instead of the regular vertical listing, moves to horizontal listing */
-    list-style-type: none;  /* Remove bullets */
-    margin: 0;
+
+/****************** MENU PAGE ******************/
+
+ul.menu-pages-list {
+    list-style: none;
+    display: none;
 }
 
-header div.container nav div.menu ul li {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    padding-top: 0;
-    padding-bottom: 0;
-    text-align: center;
+ul.menu-pages-list li {
+    cursor: pointer;
+    border: solid;
+    background-color: azure;
 }
 
-header div.container nav div.menu ul li a {
-    color: #222222;
+div.menu-pages {
+    cursor: pointer;
+    border: solid;
+    display: inline-block;
 }
 
-header div.container nav div.menu ul li a:hover {
-    color: #222277;
+div.menu-pages:hover ul.menu-pages-list {
+    position: absolute;
+    display: block;
+  }
+
+/****************** MENU LANG ******************/
+
+ul.menu-language-list {
+    list-style: none;
+    display: none;
 }
 
-header div.container nav div.menu-list-icon {
-    display: none;      /* for large screens the button is not shown */
-    text-align: right;
+ul.menu-language-list li {
+    cursor: pointer;
+    border: solid;
+    background-color: azure;
 }
+
+div.menu-language {
+    cursor: pointer;
+    border: solid;
+    display: inline-block;
+}
+
+div.menu-language:hover ul.menu-language-list {
+  position: absolute;
+  display: block;
+
+  width: 3em;
+  padding-left: -100px;
+}
+
+div.menu-language:hover ul.menu-language-list li {
+    padding-left: -100px;
+  }
