@@ -4,6 +4,7 @@
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
   "license": "0BSD",
+  "homepage": "https://adlzanchetta.github.io/my",
   "scripts": {
     "build": "gatsby build ; rm -r docs ; mv public docs",
     "develop": "gatsby develop",
@@ -11,7 +12,9 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "predeploy": "gatsby clean ; gatsby build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "gatsby": "^4.24.7",
@@ -23,6 +26,7 @@
     "react-i18next": "^12.0.0"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1"
   },
   "repository": {
