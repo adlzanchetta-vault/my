@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
-
 import { base_url } from "../env/globals";
+
 import "../styles/header_grid.css";
 
 function PagesListing () {
@@ -19,18 +19,22 @@ function LanguageListing () {
   const { changeLanguage } = useI18next();
 
   const loggedLangChange = (lang) => {
-    return () => {
-      console.log(`Triggering ${lang}...`);
-      changeLanguage(lang);
-      console.log(` ...${lang} triggered.`);
-    }
+    return () => { changeLanguage(lang); }
   }
 
   return (<ul className="menu-language-list">
-    <li key="liChangeLanguageENG" onClick={loggedLangChange('en')} >ENG</li>
-    <li key="liChangeLanguageFRA" onClick={loggedLangChange('fr')} >FRA</li>
-    <li key="liChangeLanguageESP" onClick={loggedLangChange('es')} >ESP</li>
-    <li key="liChangeLanguagePOR" onClick={loggedLangChange('pt')} >POR</li>
+    <li>
+      <span role="button" key="liChangeLanguageENG" onClick={loggedLangChange('en')} tabIndex={0} >ENG</span>
+    </li>
+    <li>
+      <span role="button" key="liChangeLanguageFRA" onClick={loggedLangChange('fr')} tabIndex={0} >FRA</span>
+    </li>
+    <li>
+      <span role="button" key="liChangeLanguageESP" onClick={loggedLangChange('es')} tabIndex={0} >ESP</span>
+    </li>
+    <li>
+      <span role="button" key="liChangeLanguagePOR" onClick={loggedLangChange('pt')} tabIndex={0} >POR</span>
+    </li>
   </ul>);
 }
 
@@ -44,7 +48,7 @@ export default function HeaderGrid() {
     <header>
       <div className="container">
         <h1 >
-          <a href={`${base_url}`}>
+          <a href={`${base_url}page`}>
             <strong>A</strong>ndre D. L. <strong>Z</strong>anchetta
           </a>
         </h1>
