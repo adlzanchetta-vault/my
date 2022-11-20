@@ -18,7 +18,10 @@ Then, run the command:
 
 ## Deploying
 
-First, ensure the ```base_url``` in the file ```src/env/globals.js``` has the proper URL value. For deploying as the Github page of the repository *[REPO]* of the user *[USER]*, this value would likely be  ```https://[USER]].github.io/[REPO]/```.
+For deploying as the Github page of the repository *[REPO]* of the user *[USER]*, ensure that:
+
+- file ```src/env/globals.js```: attribute ```base_url``` has value like ```https://[USER].github.io/[REPO]/```;
+- file ```gatsby-config.js```: attribute ```pathPrefix``` has value like ```/[REPO]```.
 
 Then, deploy it single command!
 
