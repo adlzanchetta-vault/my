@@ -13,11 +13,49 @@ header div.container {
 }
 
 header div.container h1 {
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.57em;
     grid-column: 1;      /* position */
     justify-self: left;  /* position */
 }
+
+header div.container h1 a.big-name {
+    display: block;
+}
+
+header div.container h1 a.small-name {
+    display: none;
+}
+
+header div.container h1 a.big-name {
+    display: block;
+}
+
+header div.container h1 a.small-name {
+    display: none;
+}
+
+/* small screen: drop down menu */
+@media screen and (max-width: 52rem) {
+    header div.container h1 {
+        padding-left: 0.8rem;
+    }
+}
+
+/* small screen: drop down menu */
+@media screen and (max-width: 30rem) {
+    
+    header div.container h1 a.big-name {
+        display: none;
+    }
+    
+    header div.container h1 a.small-name {
+        display: block;
+    }
+
+}
+
+/****************** MENUS **********************/
 
 header div.container nav {
     font-size: 1.2em;
@@ -26,32 +64,68 @@ header div.container nav {
     justify-content: end;
 }
 
-
 /****************** MENU PAGE ******************/
 
-ul.menu-pages-list {
-    list-style: none;
-    display: none;
-}
 
 ul.menu-pages-list li {
+    display: inline;
+    font-size: 1rem;
+    padding-right: 2rem;
     cursor: pointer;
-    border: solid;
-    background-color: azure;
 }
 
+
 div.menu-pages {
-    cursor: pointer;
-    border: solid;
     display: inline-block;
 }
 
-div.menu-pages:hover ul.menu-pages-list {
-    position: absolute;
-    display: block;
-  }
+/* "menu" button */
+div.menu-pages span {
+    cursor: pointer;
+    display: none;
+    font-size: 1rem;
+}
+
+
+/* small screen: drop down menu */
+@media screen and (max-width: 38rem) {
+
+    /* "menu" button */
+    div.menu-pages span {
+        display: block;
+        padding-right: 1.5rem;
+    }
+
+    ul.menu-pages-list {
+        list-style: none;
+        display: none;
+    }
+
+    ul.menu-pages-list li {
+        border: solid;
+        display: block;
+        cursor: pointer;
+        left: -3rem;
+        position: relative;
+        background-color: azure;
+        padding-right: 0rem;
+        width: 6rem;
+    }
+
+    /* show drop down */
+    div.menu-pages:hover ul.menu-pages-list {
+        position: absolute;
+        display: block;
+    }
+}
 
 /****************** MENU LANG ******************/
+
+div.menu-language {
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-block;
+}
 
 ul.menu-language-list {
     list-style: none;
@@ -60,14 +134,14 @@ ul.menu-language-list {
 
 ul.menu-language-list li {
     cursor: pointer;
-    border: solid;
+    border-width: 0.1rem; 
+    border-style: solid;
+    border-color: #777777;
     background-color: azure;
-}
-
-div.menu-language {
-    cursor: pointer;
-    border: solid;
-    display: inline-block;
+    font-size: 1rem;
+    left: -4rem;
+    position: relative;
+    width: 5.4rem;
 }
 
 div.menu-language:hover ul.menu-language-list {
@@ -79,5 +153,6 @@ div.menu-language:hover ul.menu-language-list {
 }
 
 div.menu-language:hover ul.menu-language-list li {
-    padding-left: -100px;
-  }
+    padding-left: -2rem;
+    position: relative;
+}

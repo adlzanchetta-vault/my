@@ -5,8 +5,8 @@ main {
 }
 
 main div.content {
-    width: 50em;
-    max-width: 50em;  /* avoid using px, use TODO instead */
+    width: 50rem;
+    max-width: 50rem;  /* avoid using px, use TODO instead */
     margin: auto;
     display: inline-block;
     border: 0px red solid;
@@ -21,15 +21,16 @@ footer {
 }
 
 footer div.content {
-    width: 50em;
-    max-width: 50em;  /* avoid using px, use TODO instead */
+    width: 50rem;
+    max-width: 50rem;  /* avoid using px, use TODO instead */
     margin: auto;
     display: inline-block;
     border: 0px red solid;
     text-align: right;
+    font-size: 0.6rem;
 }
 
-@media screen and (max-width: 50em) {
+@media screen and (max-width: 50rem) {
 
     main div.content {
         width: 95%;

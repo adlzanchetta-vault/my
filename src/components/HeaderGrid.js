@@ -24,16 +24,24 @@ function LanguageListing () {
 
   return (<ul className="menu-language-list">
     <li>
-      <span role="button" key="liChangeLanguageENG" onClick={loggedLangChange('en')} tabIndex={0} >ENG</span>
+      <span role="button" key="liChangeLanguageENG" onClick={loggedLangChange('en')} tabIndex={0} >
+        English
+      </span>
     </li>
     <li>
-      <span role="button" key="liChangeLanguageFRA" onClick={loggedLangChange('fr')} tabIndex={0} >FRA</span>
+      <span role="button" key="liChangeLanguageFRA" onClick={loggedLangChange('fr')} tabIndex={0} >
+        Français
+      </span>
     </li>
     <li>
-      <span role="button" key="liChangeLanguageESP" onClick={loggedLangChange('es')} tabIndex={0} >ESP</span>
+      <span role="button" key="liChangeLanguageESP" onClick={loggedLangChange('es')} tabIndex={0} >
+        Español
+      </span>
     </li>
     <li>
-      <span role="button" key="liChangeLanguagePOR" onClick={loggedLangChange('pt')} tabIndex={0} >POR</span>
+      <span role="button" key="liChangeLanguagePOR" onClick={loggedLangChange('pt')} tabIndex={0} >
+        Português
+      </span>
     </li>
   </ul>);
 }
@@ -48,13 +56,16 @@ export default function HeaderGrid() {
     <header>
       <div className="container">
         <h1 >
-          <a href={`${base_url}page`}>
+          <a href={`${base_url}page`} className="big-name" >
             <strong>A</strong>ndre D. L. <strong>Z</strong>anchetta
+          </a>
+          <a href={`${base_url}page`} className="small-name" >
+            A. D. L. Zanchetta
           </a>
         </h1>
         <nav>
           <div className="menu-pages" >
-            Menu
+            <span>Menu</span>
             <PagesListing />
           </div>
           <div className="menu-language" >
