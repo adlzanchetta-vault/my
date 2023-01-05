@@ -23,7 +23,9 @@ const CVsection = (props) => {
   while (i18n.exists(`${sectionPrefix}_${curEntry}_title`)) {
     const curPrefix = `${sectionPrefix}_${curEntry}`;
 
-    retItems.push(<h3>{t(`${curPrefix}_title`)}</h3>)
+    if (i18n.exists(`${curPrefix}_title`)) {
+      retItems.push(<h3>{t(`${curPrefix}_title`)}</h3>)
+    }
     
     // 
     if (i18n.exists(`${curPrefix}_date`)) {
@@ -43,6 +45,34 @@ const CVsection = (props) => {
     curEntry += 1;
   }
 
+  // publication case
+  curEntry = 1;
+  while (i18n.exists(`${sectionPrefix}_${curEntry}_citation`)) {
+    const curPrefix = `${sectionPrefix}_${curEntry}`;
+
+    const curDoi = i18n.exists(`${curPrefix}_doi`) ?
+                   t(`${curPrefix}_doi`) :
+                   null;
+
+    const curDoiTag = curDoi ?
+      <>
+        <span> DOI:</span>
+        <a href={`https://doi.org/${curDoi}`} target="_blank" rel="noreferrer">{curDoi}</a>
+      </>:
+      <></>
+  
+    //
+    retItems.push(
+
+      <p className="last">
+        {t(`${curPrefix}_citation`)}
+        {curDoiTag}
+      </p>);
+
+    curEntry += 1;
+  }
+
+
   return (retItems);
 }
 
@@ -56,6 +86,7 @@ export default function Cv() {
       <h1>{t("cv")}</h1>
       <CVsection sectionPrefix="experience" />
       <CVsection sectionPrefix="education" />
+      <CVsection sectionPrefix="publication" />
     </Layout>
   )
   

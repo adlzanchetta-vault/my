@@ -10,9 +10,7 @@ export default function Portfolio() {
  
   return ( 
     <Layout>
-      <p>
-        <h1>{t("portfolio")}</h1>
-      </p>
+      <h1>{t("portfolio")}</h1>
       <p>
         TODO
       </p>

@@ -6,9 +6,15 @@ This is Andre's personal page. It is responsive without depending on Bootstrap.
 
 ## Developing
 
+### Installing dependencies
+
 Only once, install the ```node``` packages in which the project depends on:
 
 ```$ npm install```
+
+If an error message pops up saying that the *package-lock.json* file was created with an old version of npm, take into consideration that it was generated using ```nodejs 12.22.9``` and ```npm 8.19.2```.
+
+### Running locally for development
 
 Ensure the ```base_url``` in the file ```src/env/globals.js``` has the value ```http://localhost:8000/```.
 

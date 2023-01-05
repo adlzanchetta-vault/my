@@ -32,5 +32,15 @@
     "cv_education_4_title": "Bachelor Degree in Computer Sciences",
     "cv_education_4_date": "December 2009",
     "cv_education_4_location": "Campinas - SP, Brazil",
-    "cv_education_4_institution": "Campinas State University - UNICAMP."
+    "cv_education_4_institution": "Campinas State University - UNICAMP.",
+
+    "cv_publication_title": "Publication",
+    "cv_publication_1_citation": "Zanchetta, A.D.L.; Coulibaly, P.; Fortin, V. (2022) Forecasting High-Flow Discharges in a Flashy Catchment Using Multiple Precipitation Estimates as Predictors in Machine Learning Models. Hydrology, 9(12).",
+    "cv_publication_1_doi": "10.3390/hydrology9120216",
+    "cv_publication_2_citation": "ZANCHETTA, A.D.L.; COULIBALY, P. (2022) Probabilistic Forecasts of Flood Inundation Maps Using Surrogate Models. Geosciences, 12(11)",
+    "cv_publication_2_doi": "10.3390/geosciences12110426",
+    "cv_publication_3_citation": "ZANCHETTA, A.D.L., COULIBALY, P. (2022) Hybrid Surrogate Model for Timely Prediction of Flash Flood Inundation Maps Caused by Rapid River Overflow. Forecasting, 4(1).",
+    "cv_publication_3_doi": "10.3390/forecast4010007",
+    "cv_publication_4_citation": "ZANCHETTA, A.D.L., COULIBALY, P. (2020) Recent Advances in Real-Time Pluvial Flash Flood Forecasting. Water, 12(2): 570.",
+    "cv_publication_4_doi": "10.3390/w12020570"
 }
