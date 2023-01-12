@@ -10,13 +10,23 @@ require("dotenv").config({
 
 module.exports = {
   /* Your site config here */
-  pathPrefix: `/my`,
+  /* pathPrefix: `/my`, */
+  pathPrefix: process.env.PATH_PREFIX,
+
   plugins: [
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `locale`,
         path: `${__dirname}/locales`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `globale`,
+        path: `./globales/`
       }
     },
     {

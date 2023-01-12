@@ -1,0 +1,29 @@
+div.email_webform {
+    display: block;
+    float: left;
+    width: 45%;
+}
+
+div.social_media_profiles {
+    display: block;
+    float: left;
+    width: 45%;
+}
+
+div.social_media_profile {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 2vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+div.social_media_profile a {
+    align-items: center;
+}
+
+img.social_media_icon {
+    height: 5vh;
+    width: 5vh;
+}

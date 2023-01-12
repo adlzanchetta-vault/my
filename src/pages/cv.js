@@ -82,8 +82,7 @@ export default function Cv() {
   const { t } = useTranslation();  // used for showing
  
   return ( 
-    <Layout>
-      <h1>{t("cv")}</h1>
+    <Layout title={t("cv")} >
       <CVsection sectionPrefix="experience" />
       <CVsection sectionPrefix="education" />
       <CVsection sectionPrefix="publication" />

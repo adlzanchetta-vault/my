@@ -22,6 +22,19 @@ Then, run the command:
 
 ```$ npm run-script clean ; npm run-script develop```
 
+## Customize
+
+Folders holding customizable files are:
+
+- ```globales```
+- ```locales```
+- ```static```
+
+Besites, in the root folder there are:
+
+- ```.env.development```
+- ```.env.production```
+
 ## Deploying
 
 For deploying as the Github page of the repository *[REPO]* of the user *[USER]*, ensure that:

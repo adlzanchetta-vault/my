@@ -1,17 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
-import { base_url } from "../env/globals";
 
 import "../styles/header_grid.css";
 
 function PagesListing () {
   const { t } = useTranslation();
 
-  return (<ul className="menu-pages-list">
-    <li><a href={`${base_url}portfolio`}>{t("portfolio")}</a></li>
-    <li><a href={`${base_url}cv`}>{t("cv")}</a></li>
-    <li><a href={`${base_url}contact`}>{t("contact")}</a></li>
+  return (
+  <ul className="menu-pages-list">
+    <li><a href={`${process.env.GATSBY_BASE_URL}portfolio`}>{t("portfolio")}</a></li>
+    <li><a href={`${process.env.GATSBY_BASE_URL}cv`}>{t("cv")}</a></li>
+    <li><a href={`${process.env.GATSBY_BASE_URL}contact`}>{t("contact")}</a></li>
   </ul>);
 }
 
@@ -56,10 +56,10 @@ export default function HeaderGrid() {
     <header>
       <div className="container">
         <h1 >
-          <a href={`${base_url}page`} className="big-name" >
+          <a href={`${process.env.GATSBY_BASE_URL}page`} className="big-name" >
             <strong>A</strong>ndre D. L. <strong>Z</strong>anchetta
           </a>
-          <a href={`${base_url}page`} className="small-name" >
+          <a href={`${process.env.GATSBY_BASE_URL}page`} className="small-name" >
             A. D. L. Zanchetta
           </a>
         </h1>
