@@ -10,6 +10,8 @@ import "../styles/contact.css";
 // https://www.adhamdannaway.com/contact
 // https://ant.design/components/form
 
+// https://www.gatsbyjs.com/docs/building-a-contact-form/
+
 const MessageForm = () => {
 
   const { t } = useTranslation();  // used for showing

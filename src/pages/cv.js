@@ -7,12 +7,10 @@ import Layout from "../components/Layout";
 import "../styles/cv.css";
 
 
-const CVsection = (props) => {
+const CVsectionGeneric = (props) => {
   const { t, i18n } = useTranslation();
 
   const sectionPrefix = `cv_${props.sectionPrefix}`;
-
-  console.log("Looking for:", sectionPrefix);
 
   if (!i18n.exists(`${sectionPrefix}_title`)) { return (<></>) }
 
@@ -45,47 +43,75 @@ const CVsection = (props) => {
     curEntry += 1;
   }
 
-  // publication case
-  curEntry = 1;
-  while (i18n.exists(`${sectionPrefix}_${curEntry}_citation`)) {
-    const curPrefix = `${sectionPrefix}_${curEntry}`;
-
-    const curDoi = i18n.exists(`${curPrefix}_doi`) ?
-                   t(`${curPrefix}_doi`) :
-                   null;
-
-    const curDoiTag = curDoi ?
-      <>
-        <span> DOI:</span>
-        <a href={`https://doi.org/${curDoi}`} target="_blank" rel="noreferrer">{curDoi}</a>
-      </>:
-      <></>
-  
-    //
-    retItems.push(
-
-      <p className="last">
-        {t(`${curPrefix}_citation`)}
-        {curDoiTag}
-      </p>);
-
-    curEntry += 1;
-  }
-
-
   return (retItems);
 }
 
 
-export default function Cv() {
+const CVItemPublicationRef = ({reference}) => {
+
+  // finds sentences between '<' and '>'
+  const splittedRef = reference.split(/(?:<|>)/);
+
+  return ((splittedRef.length !== 3) ?
+          (<>{reference}.</>) :
+          (<>
+             {splittedRef[0]}
+             <strong>{splittedRef[1]}</strong>
+             {splittedRef[2]}.
+           </>));
+}
+
+
+const CVItemPublicationDOI = ({doi}) => {
+  if (!doi) { return (null); }
+
+  return (
+    <>
+      <span> DOI: </span>
+      <a href={`https://doi.org/${doi}`} target="_blank" rel="noreferrer">{doi}</a>.
+    </>
+  );
+}
+
+const CVitemPublication = (publication) => {
+  if (!(publication && publication.reference)) {
+    return (null)
+  }
+
+  return (
+    <p className="last">
+      <CVItemPublicationRef reference={publication.reference} />
+      <CVItemPublicationDOI doi={publication.doi} />
+    </p>
+  )
+}
+
+const CVsectionPublications = ({publications}) => {
+  const { t, i18n } = useTranslation();  // used for showing
+  
+  const sectionName = `cv_publication_title`;
+
+  // basic check
+  if (!(publications && publications.length && i18n.exists(sectionName))) {
+    return (null);
+  }
+
+  return <>
+    { <h2>{t(sectionName)}</h2> }
+    { publications.map(CVitemPublication) }
+  </>
+}
+
+
+export default function Cv({data}) {
 
   const { t } = useTranslation();  // used for showing
  
   return ( 
     <Layout title={t("cv")} >
-      <CVsection sectionPrefix="experience" />
-      <CVsection sectionPrefix="education" />
-      <CVsection sectionPrefix="publication" />
+      <CVsectionGeneric sectionPrefix="experience" />
+      <CVsectionGeneric sectionPrefix="education" />
+      <CVsectionPublications publications={data.publication.nodes} />
     </Layout>
   )
   
@@ -104,6 +130,12 @@ export const query = graphql`
           language
         }
       }
+    },
+    publication: allCvPublicationsJson {
+        nodes {
+          reference
+          doi
+        }
     }
   }
 `;

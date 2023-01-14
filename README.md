@@ -23,7 +23,7 @@ Ensure the ```base_url``` in the file ```src/env/globals.js``` has the value ```
 Then, run the command:
 
 ```bash
-$ npm run-script clean ; npm run-script develop
+$ npm run-script clean_dev
 ```
 
 ## Customize
@@ -33,6 +33,7 @@ Folders holding customizable files are:
 - ```globales```
 - ```locales```
 - ```static```
+- ```src/styles```
 
 Besites, in the root folder there are:
 

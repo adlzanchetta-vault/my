@@ -3,5 +3,7 @@
     "portfolio": "Portafolio",
     "cv": "C.V.",
     "contact": "Contacto",
-    "powered_by": "Movido a React, Gatsby, I18next, CSS grid, y café."
+    "powered_by": "Movido a React, Gatsby, I18next, CSS grid, y café.",
+
+    "cv_publication_title": "Publicaciones"
 }

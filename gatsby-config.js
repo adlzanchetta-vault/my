@@ -36,8 +36,7 @@ module.exports = {
         languages: [`en`, `es`, `fr`, `pt`],
         defaultLanguage: `en`,
         // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
-        trailingSlash: 'always',
-        // you can pass any i18next options
+        trailingSlash: false,
         i18nextOptions: {
           interpolation: {
             escapeValue: false // not needed for react as it escapes by default

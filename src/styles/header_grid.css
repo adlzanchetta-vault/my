@@ -109,7 +109,7 @@ div.menu-pages span {
         cursor: pointer;
         left: -3rem;
         position: relative;
-        background-color: azure;
+        background-color: rgb(255, 255, 255);
         padding-right: 0rem;
         width: 6rem;
     }
@@ -139,11 +139,11 @@ ul.menu-language-list li {
     border-width: 0.1rem; 
     border-style: solid;
     border-color: #777777;
-    background-color: azure;
-    font-size: 1rem;
-    left: -4rem;
+    background-color: rgb(255, 255, 255);
+    left: -3.5rem;
     position: relative;
-    width: 5.4rem;
+    width: 4.5rem;
+    padding-left: 0.2rem;
 }
 
 div.menu-language:hover ul.menu-language-list {

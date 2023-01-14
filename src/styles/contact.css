@@ -20,10 +20,11 @@ div.social_media_profile {
 }
 
 div.social_media_profile a {
-    align-items: center;
+    display: flex;
 }
 
 img.social_media_icon {
-    height: 5vh;
-    width: 5vh;
+    height: 1.66rem;
+    width: 1.66rem;
+    padding-right: 1vh;
 }

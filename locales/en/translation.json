@@ -3,7 +3,7 @@
     "portfolio": "Portfolio",
     "cv": "C.V.",
     "contact": "Contact",
-    "powered_by": "Powered by React, Gatsby, I18next, CSS grid, and coffee",
+    "powered_by": "Powered by React, Gatsby, I18next, CSS grid, and coffee.",
     "home_content": "Andre Della Libera Zanchetta (adlzanchetta) is a PhD candidate at McMaster University, Ontario - Canada.",
 
     "cv_experience_title": "Recent Experience",
@@ -34,16 +34,8 @@
     "cv_education_4_location": "Campinas - SP, Brazil",
     "cv_education_4_institution": "Campinas State University - UNICAMP.",
 
-    "cv_publication_title": "Publication",
-    "cv_publication_1_citation": "Zanchetta, A.D.L.; Coulibaly, P.; Fortin, V. (2022) Forecasting High-Flow Discharges in a Flashy Catchment Using Multiple Precipitation Estimates as Predictors in Machine Learning Models. Hydrology, 9(12).",
-    "cv_publication_1_doi": "10.3390/hydrology9120216",
-    "cv_publication_2_citation": "ZANCHETTA, A.D.L.; COULIBALY, P. (2022) Probabilistic Forecasts of Flood Inundation Maps Using Surrogate Models. Geosciences, 12(11)",
-    "cv_publication_2_doi": "10.3390/geosciences12110426",
-    "cv_publication_3_citation": "ZANCHETTA, A.D.L., COULIBALY, P. (2022) Hybrid Surrogate Model for Timely Prediction of Flash Flood Inundation Maps Caused by Rapid River Overflow. Forecasting, 4(1).",
-    "cv_publication_3_doi": "10.3390/forecast4010007",
-    "cv_publication_4_citation": "ZANCHETTA, A.D.L., COULIBALY, P. (2020) Recent Advances in Real-Time Pluvial Flash Flood Forecasting. Water, 12(2): 570.",
-    "cv_publication_4_doi": "10.3390/w12020570",
-
+    "cv_publication_title": "Publications",
+    
     "contact_contactme": "Get in touch via your favorite social media, via email or via this form!",
     "contact_form_name": "Your name",
     "contact_form_email": "Your e-mail",

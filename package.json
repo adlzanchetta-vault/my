@@ -7,14 +7,15 @@
   "homepage": "https://adlzanchetta.github.io/my",
   "scripts": {
     "build": "gatsby build ; rm -r docs ; mv public docs",
+    "clean": "gatsby clean",
+    "clean_dev": "gatsby clean; gatsby develop",
     "develop": "gatsby develop",
+    "deploy": "gh-pages -d public",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "predeploy": "gatsby clean ; gatsby build --prefix-paths",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "predeploy": "gatsby clean ; gatsby build --prefix-paths",
-    "deploy": "gh-pages -d public"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
     "antd": "^5.1.2",
