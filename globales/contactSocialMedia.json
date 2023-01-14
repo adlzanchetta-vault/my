@@ -29,5 +29,10 @@
         "name": "reddit",
         "name_color": "#FF4602",
         "profile_url": "https://www.reddit.com/user/adlzanchetta"
+    }, {
+        "logo_img": "imgs/social_media/icon_researchgate.svg",
+        "name": "Research Gate",
+        "name_color": "#05C7A2",
+        "profile_url": "https://www.researchgate.net/profile/Andre-Della-Libera-Zanchetta"
     }
 ]

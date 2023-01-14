@@ -1,8 +1,9 @@
 /* header - flex */
 header {
     width: inherit;
-    border-bottom: 1px #CCCCEE solid;
-    background-color: #efefef;
+    /* border-bottom: 1px #CCCCEE solid;*/
+    border-bottom: 1px solid #e5e3dd;
+    background-color: #ffffff;
 }
 
 header div.container {
@@ -10,6 +11,7 @@ header div.container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);  /* we will used flex grid, 3-columns equally spaced */
     margin: auto;
+    color: var(--global-font-color-dark);
 }
 
 header div.container h1 {
@@ -69,7 +71,7 @@ header div.container nav {
 
 ul.menu-pages-list li {
     display: inline;
-    font-size: 1rem;
+    font-size: var(--header-links-font-size);
     padding-right: 2rem;
     cursor: pointer;
 }
@@ -83,7 +85,7 @@ div.menu-pages {
 div.menu-pages span {
     cursor: pointer;
     display: none;
-    font-size: 1rem;
+    font-size: var(--header-links-font-size);
 }
 
 
@@ -122,7 +124,7 @@ div.menu-pages span {
 /****************** MENU LANG ******************/
 
 div.menu-language {
-    font-size: 1rem;
+    font-size: var(--header-links-font-size);
     cursor: pointer;
     display: inline-block;
 }

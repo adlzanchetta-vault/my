@@ -5,12 +5,16 @@ main {
 }
 
 main div.content {
+    color: var(--global-font-color-regular);
     width: 50rem;
     max-width: 50rem;  /* avoid using px, use TODO instead */
     margin: auto;
     display: inline-block;
-    border: 0px red solid;
-    background-color: #efefef;
+    border-width: 0 1px 1px 1px;
+    border-color: #e5e3dd;;
+    border-style: solid;
+    border-radius: 0rem 0rem 1rem 1rem;
+    background-color: #ffffff;
 }
 
 

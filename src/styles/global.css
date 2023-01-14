@@ -1,3 +1,9 @@
+:root {
+    --header-links-font-size: 0.85rem;
+    --global-font-color-dark: rgba(12, 12, 15, 0.95);
+    --global-font-color-regular: rgb(95, 95, 110, 0.95);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +13,7 @@
 html, body {
     width: 100%;
     min-height: 100%;
-    background-color: #dddddd;
+    background-color: #f8f9fc;
 }
 
 a {

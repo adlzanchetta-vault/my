@@ -10,7 +10,9 @@ This is Andre's personal page. It is responsive without depending on Bootstrap.
 
 Only once, install the ```node``` packages in which the project depends on:
 
-```$ npm install```
+```bash
+$ npm install
+```
 
 If an error message pops up saying that the *package-lock.json* file was created with an old version of npm, take into consideration that it was generated using ```nodejs 12.22.9``` and ```npm 8.19.2```.
 
@@ -20,7 +22,9 @@ Ensure the ```base_url``` in the file ```src/env/globals.js``` has the value ```
 
 Then, run the command:
 
-```$ npm run-script clean ; npm run-script develop```
+```bash
+$ npm run-script clean ; npm run-script develop
+```
 
 ## Customize
 
@@ -44,6 +48,8 @@ For deploying as the Github page of the repository *[REPO]* of the user *[USER]*
 
 Then, deploy it single command!
 
-```$ npm run deploy```
+```bash
+$ npm run deploy
+```
 
 **NOTE:** ensure that *Github page* the repository ```[REPO]``` is set up to serve the content of the branch *hg-page* and root folder (```/```).
