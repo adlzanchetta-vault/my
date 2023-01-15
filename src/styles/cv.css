@@ -11,8 +11,14 @@ div.content h3 {
 
 div.content p {
     font-size: 0.7rem;
-    padding-left: 2.0rem;
-    padding-right: 1.0rem;
+    margin-left: 2.0rem;
+    margin-right: 1.0rem;
+}
+
+div.content div.email_webform {
+    font-size: 0.7rem; 
+    margin-left: 2.0rem;
+    margin-right: 1.0rem;
 }
 
 div.content .last {

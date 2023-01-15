@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Button, Form, Input } from 'antd';
 import { useTranslation } from "gatsby-plugin-react-i18next";
+import ContactForm from "./contact/ContactForm"
 
 import Layout from "../components/Layout";
 
@@ -11,52 +11,6 @@ import "../styles/contact.css";
 // https://ant.design/components/form
 
 // https://www.gatsbyjs.com/docs/building-a-contact-form/
-
-const MessageForm = () => {
-
-  const { t } = useTranslation();  // used for showing
-
-  const { TextArea } = Input;
-
-  return (
-    <div className="email_webform" >
-      <Form
-        labelCol={{ span: 4 }}
-        wrapperCol={{ span: 19 }}
-      >
-        <Form.Item
-          label={t("contact_form_name")}
-          name="contact_name"
-          rules={[{ required: true, message: 'Please input your username!' }]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          label={t("contact_form_email")}
-          name="contact_email"
-          rules={[{ required: false }]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          label={t("contact_form_phone")}
-          name="contact_phone"
-          rules={[{ required: false }]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          label={t("contact_form_message")}
-        >
-          <TextArea rows={4} />
-        </Form.Item>
-        <Form.Item>
-          <Button>{t("contact_form_send")}</Button>
-        </Form.Item>
-      </Form>
-    </div>
-  );
-}
 
 
 const SocialMediaProvideLink = ({profile}) => {
@@ -114,7 +68,7 @@ export default function Contact({data}) {
       <p>
         {t("contact_contactme")}
       </p>
-      <MessageForm />
+      <ContactForm formInfo={data.contact_form} />
       <SocialMediaProfiles profiles={data.social_media.nodes} />
     </Layout>
   )
@@ -142,6 +96,14 @@ export const query = graphql`
           name_color
           profile_url
         }
+    },
+    contact_form: globalesJson {
+      contactForm_method
+      contactForm_action
+      contactForm_sender_name_field
+      contactForm_sender_email_field
+      contactForm_sender_phone_field
+      contactForm_sender_message
     }
   }
 `;

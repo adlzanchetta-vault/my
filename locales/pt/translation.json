@@ -6,5 +6,12 @@
     "powered_by": "Movido a React, Gatsby, I18next, CSS grid, e café.",
     "home_content": "André Della Libera Zanchetta (adlzanchetta) é estudante de doutorado pela McMaster University, Ontario - Canada. Seu atual tema de pesquisa é a aplicabilidade de técnicas de inteligência artificial para a predićão de enchentes instantênas (flash flood).",
 
-    "cv_publication_title": "Publicações"
+    "cv_publication_title": "Publicações",
+
+    "contact_contactme": "Me contacte pela sua rede social favorita!",
+    "contact_form_name": "Seu nome",
+    "contact_form_email": "Seu e-mail",
+    "contact_form_phone": "Seu telefone",
+    "contact_form_message": "Sua mensagem",
+    "contact_form_send": "Enviar!"
 }
