@@ -36,7 +36,10 @@
 
     "cv_publication_title": "Publications",
     
-    "contact_contactme": "Get in touch via your favorite social media, via email or via this form!",
+    "contact_profiles_call": "Get in touch via your favorite social media!",
+
+    "contact_form_call": "Ou using this via this form:",
+
     "contact_form_name": "Your name",
     "contact_form_email": "Your e-mail",
     "contact_form_phone": "Your phone",

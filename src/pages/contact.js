@@ -1,7 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import ContactForm from "./contact/ContactForm"
+import ContactForm from "./contact/ContactForm";
+import SocialMediaProfiles from "./contact/SocialMediaProfiles";
 
 import Layout from "../components/Layout";
 
@@ -13,51 +14,6 @@ import "../styles/contact.css";
 // https://www.gatsbyjs.com/docs/building-a-contact-form/
 
 
-const SocialMediaProvideLink = ({profile}) => {
-  let retObj = null;
-  if (profile.profile_url) {
-    retObj = (
-      <a href={`${profile.profile_url}` }
-         style={ {color: profile.name_color} }
-         target="_blank" rel="noreferrer" >
-        <img src={`${process.env.GATSBY_BASE_URL}${profile.logo_img}`}
-           alt={profile.name} className="social_media_icon" />
-        <span>{profile.name}</span>
-      </a>
-    );
-  } else {
-    retObj = (
-      <>
-        <img src={`${process.env.GATSBY_BASE_URL}${profile.logo_img}`}
-          alt={profile.name} className="social_media_icon" />
-        <span style={{color: profile.name_color}}>
-          {profile.name}
-        </span>
-      </>
-    );
-  }
-
-  return (retObj);
-}
-
-
-const SocialMediaProfile = (profile) => {
-  return (
-    <div className="social_media_profile">
-      <SocialMediaProvideLink profile={profile} />
-    </div>
-  );
-}
-
-
-const SocialMediaProfiles = ({profiles}) => {
-  return (
-    <div className="social_media_profiles" >
-      { profiles.map(SocialMediaProfile) }
-    </div>
-  );
-};
-
 
 export default function Contact({data}) {
  
@@ -65,14 +21,10 @@ export default function Contact({data}) {
 
   return ( 
     <Layout title={t("contact")}>
-      <p>
-        {t("contact_contactme")}
-      </p>
-      <ContactForm formInfo={data.contact_form} />
-      <SocialMediaProfiles profiles={data.social_media.nodes} />
+      <ContactForm label={t("contact_form_call")} formInfo={data.contact_form} />
+      <SocialMediaProfiles label={t("contact_profiles_call")} profiles={data.social_media.nodes} />
     </Layout>
   )
-  
 }
 
 

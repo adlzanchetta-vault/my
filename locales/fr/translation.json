@@ -7,7 +7,11 @@
 
     "cv_publication_title": "Publications",
 
-    "contact_contactme": "Contactez moi par votre réseau social favorite!",
+    "contact_profiles_call": "Contactez moi par votre réseau social favorite!",
+
+    "contact_form_call": "Ou bien par cette forme:",
+
+    "contact_contactme": "",
     "contact_form_name": "Votre nom",
     "contact_form_email": "Votre e-mail",
     "contact_form_phone": "Votre fone",

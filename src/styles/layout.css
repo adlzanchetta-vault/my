@@ -15,6 +15,7 @@ main div.content {
     border-style: solid;
     border-radius: 0rem 0rem 1rem 1rem;
     background-color: #ffffff;
+    padding-bottom: 1rem;
 }
 
 main div.content h1 {

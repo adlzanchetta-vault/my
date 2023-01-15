@@ -1,13 +1,19 @@
 div.email_webform {
-    display: block;
+    display: flex;
     float: left;
-    width: 45%;
+    max-width: 27rem;
+    border-color: #DADADA;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.5rem;
+    padding: 1rem;
 }
 
 div.social_media_profiles {
     display: block;
     float: left;
-    width: 45%;
+    margin-left: 2.0rem;
+    margin-right: 1.0rem;
 }
 
 div.social_media_profile {
