@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_hello_world=self.webpackChunkgatsby_starter_hello_world||[]).push([[25],{4037:function(e,t,l){l.r(t),l.d(t,{default:function(){return a}});var n=l(7294),r=l(7782),u=l(8175);function a(){const{t:e}=(0,r.useTranslation)();return n.createElement(u.default,null,n.createElement("h1",null,e("portfolio")),n.createElement("p",null,"TODO"))}}}]);
+//# sourceMappingURL=component---src-pages-portfolio-js-4d982914d73060b711a5.js.map
