@@ -31,9 +31,9 @@ const SocialMediaProvideLink = ({profile}) => {
 }
 
 
-const SocialMediaProfile = (profile) => {
+const SocialMediaProfile = (profile, idx) => {
   return (
-    <div className="social_media_profile">
+    <div className="social_media_profile" key={idx} >
       <SocialMediaProvideLink profile={profile} />
     </div>
   );

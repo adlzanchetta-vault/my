@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 
-import "../styles/header_grid.css";
+import "../../styles/header_grid.css";
 
 // // CONS ////////////////////////////////////////////////////////////////////////////////////// //
 
@@ -13,7 +13,7 @@ const LANGUAGES = [
   {"acronym": "pt", "label": "Português"}
 ]
 
-// // CONS ////////////////////////////////////////////////////////////////////////////////////// //
+// // Sub-Components //////////////////////////////////////////////////////////////////////////// //
 
 function PagesListing () {
   const { t } = useTranslation();
@@ -43,29 +43,37 @@ function LanguageListing () {
     return ((acronym === language) ? (<strong>{label}</strong>) : label);
   }
 
+  const languageItem = (label, acronym, itemClass, i) => {
+    return (
+      <li className={`dropdown-item dropdown-item-${itemClass}`}>
+        <span role="button" tabIndex={0} key={i}
+              onClick={loggedLangChange(acronym)}
+              onKeyDown={loggedLangChange(acronym)} >
+          {mayHighlight(label, acronym)}
+        </span>
+      </li>
+    );
+  }
+
+  const languageItemWrapped = (l, i) => {
+    const itClass = (i < (LANGUAGES.length - 1)) ? "mid" : "last";
+    return (languageItem(l.label, l.acronym, itClass, i));
+  }
+
   return (
     <ul className="menu-language-list">
-      {LANGUAGES.map((l, i) => {
-        const itClass = (i < (LANGUAGES.length - 1)) ? "mid" : "last";
-        
-        return (
-          <li className={`dropdown-item dropdown-item-${itClass}`}>
-            <span role="button"  tabIndex={0}
-                  key={`liChangeLanguage${l.acronym.toUpperCase()}`}
-                  onClick={loggedLangChange(l.acronym)} >
-              {mayHighlight(l.label, l.acronym)}
-            </span>
-          </li>)
-      })}
+      {LANGUAGES.map(languageItemWrapped)}
     </ul>
   );
 }
+
+
+// // COMPONENTS //////////////////////////////////////////////////////////////////////////////// //
 
 export default function HeaderGrid() {
 
   // set up hooks
   const { language } = useI18next();
-
 
   return (
     <header>

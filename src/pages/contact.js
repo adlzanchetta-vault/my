@@ -4,7 +4,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 import ContactForm from "./contact/ContactForm";
 import SocialMediaProfiles from "./contact/SocialMediaProfiles";
 
-import Layout from "../components/Layout";
+import Layout from "./common/Layout";
 
 import "../styles/contact.css";
 

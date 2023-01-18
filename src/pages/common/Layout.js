@@ -3,8 +3,8 @@ import HeaderGrid from "./HeaderGrid";
 import FooterGrid from "./Footer";
 import { Helmet } from "react-helmet";
 
-import "../styles/global.css";
-import "../styles/layout.css";
+import "../../styles/global.css";
+import "../../styles/layout.css";
 
 export default function Layout( { title, children } ) {
     return (

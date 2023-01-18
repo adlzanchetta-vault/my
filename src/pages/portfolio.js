@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
-import Layout from "../components/Layout";
+import Layout from "./common/Layout";
 
 export default function Portfolio() {
 

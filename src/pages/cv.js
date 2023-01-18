@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
-import Layout from "../components/Layout";
+import Layout from "./common/Layout";
 
 import "../styles/cv.css";
 
@@ -73,13 +73,13 @@ const CVItemPublicationDOI = ({doi}) => {
   );
 }
 
-const CVitemPublication = (publication) => {
+const CVitemPublication = (publication, idx) => {
   if (!(publication && publication.reference)) {
     return (null)
   }
 
   return (
-    <p className="last">
+    <p className="last" key={idx} >
       <CVItemPublicationRef reference={publication.reference} />
       <CVItemPublicationDOI doi={publication.doi} />
     </p>
