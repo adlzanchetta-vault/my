@@ -4,46 +4,61 @@ import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 
 import "../styles/header_grid.css";
 
+// // CONS ////////////////////////////////////////////////////////////////////////////////////// //
+
+const LANGUAGES = [
+  {"acronym": "en", "label": "English"},
+  {"acronym": "fr", "label": "Français"},
+  {"acronym": "es", "label": "Español"},
+  {"acronym": "pt", "label": "Português"}
+]
+
+// // CONS ////////////////////////////////////////////////////////////////////////////////////// //
+
 function PagesListing () {
   const { t } = useTranslation();
 
   return (
   <ul className="menu-pages-list">
-    <li><a href={`${process.env.GATSBY_BASE_URL}portfolio`}>{t("portfolio")}</a></li>
-    <li><a href={`${process.env.GATSBY_BASE_URL}cv`}>{t("cv")}</a></li>
-    <li><a href={`${process.env.GATSBY_BASE_URL}contact`}>{t("contact")}</a></li>
+    <li className="mid ">
+      <a href={`${process.env.GATSBY_BASE_URL}portfolio`}>{t("portfolio")}</a>
+    </li>
+    <li className="mid">
+      <a href={`${process.env.GATSBY_BASE_URL}cv`}>{t("cv")}</a>
+    </li>
+    <li className="last">
+      <a href={`${process.env.GATSBY_BASE_URL}contact`}>{t("contact")}</a>
+    </li>
   </ul>);
 }
 
 function LanguageListing () {
-  const { changeLanguage } = useI18next();
+  const { language, changeLanguage } = useI18next();
 
   const loggedLangChange = (lang) => {
     return () => { changeLanguage(lang); }
   }
 
-  return (<ul className="menu-language-list">
-    <li>
-      <span role="button" key="liChangeLanguageENG" onClick={loggedLangChange('en')} tabIndex={0} >
-        English
-      </span>
-    </li>
-    <li>
-      <span role="button" key="liChangeLanguageFRA" onClick={loggedLangChange('fr')} tabIndex={0} >
-        Français
-      </span>
-    </li>
-    <li>
-      <span role="button" key="liChangeLanguageESP" onClick={loggedLangChange('es')} tabIndex={0} >
-        Español
-      </span>
-    </li>
-    <li>
-      <span role="button" key="liChangeLanguagePOR" onClick={loggedLangChange('pt')} tabIndex={0} >
-        Português
-      </span>
-    </li>
-  </ul>);
+  const mayHighlight = (label, acronym) => {
+    return ((acronym === language) ? (<strong>{label}</strong>) : label);
+  }
+
+  return (
+    <ul className="menu-language-list">
+      {LANGUAGES.map((l, i) => {
+        const itClass = (i < (LANGUAGES.length - 1)) ? "mid" : "last";
+        
+        return (
+          <li className={`dropdown-item dropdown-item-${itClass}`}>
+            <span role="button"  tabIndex={0}
+                  key={`liChangeLanguage${l.acronym.toUpperCase()}`}
+                  onClick={loggedLangChange(l.acronym)} >
+              {mayHighlight(l.label, l.acronym)}
+            </span>
+          </li>)
+      })}
+    </ul>
+  );
 }
 
 export default function HeaderGrid() {
@@ -69,7 +84,7 @@ export default function HeaderGrid() {
             <PagesListing />
           </div>
           <div className="menu-language" >
-            {language.toUpperCase()}
+            {`[${language.toUpperCase()}]`}
             <LanguageListing />
           </div>
         </nav>
