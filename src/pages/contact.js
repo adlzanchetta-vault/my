@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import ContactForm from "./contact/ContactForm";
-import SocialMediaProfiles from "./contact/SocialMediaProfiles";
+import ContactForm from "../components/contact/ContactForm";
+import SocialMediaProfiles from "../components/contact/SocialMediaProfiles";
 
 import Layout from "./common/Layout";
 

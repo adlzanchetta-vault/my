@@ -45,8 +45,8 @@ function LanguageListing () {
 
   const languageItem = (label, acronym, itemClass, i) => {
     return (
-      <li className={`dropdown-item dropdown-item-${itemClass}`}>
-        <span role="button" tabIndex={0} key={i}
+      <li className={`dropdown-item dropdown-item-${itemClass}`} key={i} >
+        <span role="button" tabIndex={0}
               onClick={loggedLangChange(acronym)}
               onKeyDown={loggedLangChange(acronym)} >
           {mayHighlight(label, acronym)}
