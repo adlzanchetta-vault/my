@@ -4,13 +4,14 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "./common/Layout";
 
+const PAGE_ID = "portfolio";
+
 export default function Portfolio() {
 
   const { t } = useTranslation();  // used for showing
  
   return ( 
-    <Layout>
-      <h1>{t("portfolio")}</h1>
+    <Layout title={t(PAGE_ID)} page_id={PAGE_ID}>
       <p>
         TODO
       </p>

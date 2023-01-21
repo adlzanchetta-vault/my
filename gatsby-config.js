@@ -4,9 +4,12 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+const {stringToList} = require("./src/libs/general.js");
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+
 
 /*
 {
@@ -31,7 +34,7 @@ module.exports = {
   pathPrefix: process.env.PATH_PREFIX,
 
   flags: {
-    DEV_SSR: true
+    DEV_SSR: false
   },
 
   plugins: [
@@ -54,8 +57,8 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: [`en`, `es`, `fr`],
-        defaultLanguage: `en`,
+        languages: stringToList(process.env.LANGUAGES_ACRONYMS),
+        defaultLanguage: process.env.LANGUAGE_DEFAULT,
         // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
         trailingSlash: 'always',
         i18nextOptions: {

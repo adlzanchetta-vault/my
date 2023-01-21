@@ -6,6 +6,8 @@ import Layout from "./common/Layout";
 
 import "../styles/page.css";
 
+const PAGE_ID = "home";
+
 const processHomeText = (rawHomeText) => {
   const splittedText = rawHomeText.split('\n');
   return ( <> {splittedText.map((txt, i) => (<p key={i}>{txt}</p>))} </> );
@@ -16,11 +18,11 @@ export default function Page() {
   const { t } = useTranslation();  // used for showing
 
   return ( 
-    <Layout>
+    <Layout page_id={PAGE_ID}>
       <img src={`${process.env.GATSBY_BASE_URL}imgs/andre_horizontal.jpg`}
            className="home_pic"
            alt="Andre's face" />
-      <h1>{t("home")}</h1>
+      <h1>{t(PAGE_ID)}</h1>
       {processHomeText(t("home_content"))}
     </Layout>
   )

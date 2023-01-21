@@ -6,6 +6,7 @@ import Layout from "./common/Layout";
 
 import "../styles/cv.css";
 
+const PAGE_ID = "cv";
 
 const CVsectionGeneric = (props) => {
   const { t, i18n } = useTranslation();
@@ -108,7 +109,7 @@ export default function Cv({data}) {
   const { t } = useTranslation();  // used for showing
  
   return ( 
-    <Layout title={t("cv")} >
+    <Layout title={t(PAGE_ID)} page_id={PAGE_ID}>
       <CVsectionGeneric sectionPrefix="experience" />
       <CVsectionGeneric sectionPrefix="education" />
       <CVsectionPublications publications={data.publication.nodes} />

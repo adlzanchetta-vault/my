@@ -6,13 +6,13 @@ import { Helmet } from "react-helmet";
 import "../../styles/global.css";
 import "../../styles/layout.css";
 
-export default function Layout( { title, children } ) {
+export default function Layout( { title, page_id, children } ) {
     return (
         <>
             <Helmet>
                 <title>{ process.env.GATSBY_PAGE_TITLE }</title>
             </Helmet>
-            <HeaderGrid />
+            <HeaderGrid page_id={page_id} />
             <main>
                 <div className="content">
                   {title ? (<h1>{title}</h1>) : <></>}
@@ -23,20 +23,3 @@ export default function Layout( { title, children } ) {
         </>
     );
 }
-
-/*
-// this commands defines how the GraphQL query must be executed
-export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;
-*/

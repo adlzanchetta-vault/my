@@ -3,32 +3,43 @@ import { graphql } from "gatsby"
 import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 
 import "../../styles/header_grid.css";
+import {stringToList} from "../../libs/general.js"
 
 // // CONS ////////////////////////////////////////////////////////////////////////////////////// //
 
-const LANGUAGES = [
-  {"acronym": "en", "label": "English"},
-  {"acronym": "fr", "label": "Français"},
-  {"acronym": "es", "label": "Español"},
-  {"acronym": "pt", "label": "Português"}
-]
+const getLanguageDicts = (acronyms, labels) => {
+  let i = 0;
+  const ret_list = [];
+  while (i < labels.length) {
+    ret_list.push({"acronym": acronyms[i], "label": labels[i]});
+    i++;
+  }
+  return (ret_list);
+}
+
+const LANGUAGES = getLanguageDicts(
+  stringToList(process.env.LANGUAGES_ACRONYMS),
+  stringToList(process.env.LANGUAGES_LABELS));
 
 // // Sub-Components //////////////////////////////////////////////////////////////////////////// //
 
-function PagesListing () {
+const PageListItem = ({className, page_id, in_page}) => {
   const { t } = useTranslation();
+  const pageClass = ((page_id && (page_id === in_page)) ? (` selected`) : (``));
+  return (
+    <li className={`${className}${pageClass}`}>
+      <a href={`${process.env.GATSBY_BASE_URL}${page_id}`}>{t(page_id)}</a>
+    </li>
+  )
+}
+
+function PagesListing ({page_id}) {
 
   return (
   <ul className="menu-pages-list">
-    <li className="mid ">
-      <a href={`${process.env.GATSBY_BASE_URL}portfolio`}>{t("portfolio")}</a>
-    </li>
-    <li className="mid">
-      <a href={`${process.env.GATSBY_BASE_URL}cv`}>{t("cv")}</a>
-    </li>
-    <li className="last">
-      <a href={`${process.env.GATSBY_BASE_URL}contact`}>{t("contact")}</a>
-    </li>
+    <PageListItem className="mid" page_id={"portfolio"} in_page={page_id} />
+    <PageListItem className="mid" page_id={"cv"} in_page={page_id} />
+    <PageListItem className="last" page_id={"contact"} in_page={page_id} />
   </ul>);
 }
 
@@ -70,7 +81,7 @@ function LanguageListing () {
 
 // // COMPONENTS //////////////////////////////////////////////////////////////////////////////// //
 
-export default function HeaderGrid() {
+export default function HeaderGrid({ page_id }) {
 
   // set up hooks
   const { language } = useI18next();
@@ -80,16 +91,16 @@ export default function HeaderGrid() {
       <div className="container">
         <h1 >
           <a href={`${process.env.GATSBY_BASE_URL}page`} className="big-name" >
-            <strong>A</strong>ndre D. L. <strong>Z</strong>anchetta
+            {process.env.TITLE_NAME_LONG}
           </a>
           <a href={`${process.env.GATSBY_BASE_URL}page`} className="small-name" >
-            A. D. L. Zanchetta
+            {process.env.TITLE_NAME_SHORT}
           </a>
         </h1>
         <nav>
           <div className="menu-pages" >
             <span>Menu</span>
-            <PagesListing />
+            <PagesListing page_id={page_id} />
           </div>
           <div className="menu-language" >
             {`[${language.toUpperCase()}]`}

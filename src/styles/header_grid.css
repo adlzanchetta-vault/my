@@ -39,6 +39,14 @@ header div.container h1 a.small-name {
     display: none;
 }
 
+header div.container a:hover {
+    color: #888;
+}
+
+header div.container li.selected a {
+    text-decoration: underline;
+}
+
 /* small screen: drop down menu */
 @media screen and (max-width: 52rem) {
     header div.container h1 {

@@ -8,6 +8,8 @@ import Layout from "./common/Layout";
 
 import "../styles/contact.css";
 
+const PAGE_ID = "contact";
+
 // https://www.adhamdannaway.com/contact
 // https://ant.design/components/form
 
@@ -20,7 +22,7 @@ export default function Contact({data}) {
   const { t } = useTranslation();  // used for showing
 
   return ( 
-    <Layout title={t("contact")}>
+    <Layout title={t(PAGE_ID)} page_id={PAGE_ID} >
       <div className="contact_content">
         <ContactForm label={t("contact_form_call")} formInfo={data.contact_form} />
         <SocialMediaProfiles label={t("contact_profiles_call")} profiles={data.social_media.nodes} />

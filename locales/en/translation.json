@@ -4,7 +4,7 @@
     "cv": "C.V.",
     "contact": "Contact",
     "powered_by": "Powered by React, Gatsby, I18next, CSS grid, and coffee.",
-    "home_content": "Andre Della Libera Zanchetta (adlzanchetta) is a PhD candidate at McMaster University, Ontario - Canada.",
+    "home_content": "Andre Della Libera Zanchetta (adlzanchetta) is a back-end web developer for NModes, company specialized in the development of chatbots. He holds a Ph.D. degree in Hydrology and Water Resources from McMaster University (Canada) and Master's degree in the same field from The University of Iowa (USA). The research topic of both his postgraduate programs are related to the subfield of hidroinformatics, in which computational technologies such as data visualization and artificial inteligence are explored with the objective of modeling, forecasting and communicating hydrological phenomena like, for example, floods.\n He is familiar with different programming languages (Javascript, Python, Java, C, PHP), speaks Spanish and Portuguese, and is proficient in writting about himself in the third person. He likes to learn new technologies while he develops new products and he developed this page as an exercise to learn CSS Grid, Flexbox and Gatsby.",
 
     "cv_experience_title": "Recent Experience",
     "cv_experience_1_title": "Back-end Web Developer",
@@ -22,7 +22,7 @@
 
     "cv_education_title": "Education",
     "cv_education_1_title": "Ph.D. Degree | Civil Engineering",
-    "cv_education_1_date": "September 2018 to Now.",
+    "cv_education_1_date": "December 2022",
     "cv_education_1_location": "Hamilton - Ontario, Canada.",
     "cv_education_1_institution": "McMaster University.",
     "cv_education_2_title": "M.Sc. Degree | Civil and Environmental Engineering",
