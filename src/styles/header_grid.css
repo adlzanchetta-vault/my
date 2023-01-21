@@ -12,6 +12,8 @@ header div.container {
     grid-template-columns: repeat(2, 1fr);  /* we will used flex grid, 3-columns equally spaced */
     margin: auto;
     color: var(--global-font-color-dark);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 header div.container h1 {

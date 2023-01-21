@@ -10,9 +10,9 @@ div.content h3 {
 }
 
 div.content p {
-    font-size: 0.7rem;
     margin-left: 2.0rem;
     margin-right: 1.0rem;
+    font-size: 0.8rem;
 }
 
 div.content div.email_webform {

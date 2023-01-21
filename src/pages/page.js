@@ -6,6 +6,11 @@ import Layout from "./common/Layout";
 
 import "../styles/page.css";
 
+const processHomeText = (rawHomeText) => {
+  const splittedText = rawHomeText.split('\n');
+  return ( <> {splittedText.map((txt, i) => (<p key={i}>{txt}</p>))} </> );
+}
+
 export default function Page() {
 
   const { t } = useTranslation();  // used for showing
@@ -16,9 +21,7 @@ export default function Page() {
            className="home_pic"
            alt="Andre's face" />
       <h1>{t("home")}</h1>
-      <p>
-        {t("home_content")}
-      </p>
+      {processHomeText(t("home_content"))}
     </Layout>
   )
 }

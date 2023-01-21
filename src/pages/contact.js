@@ -21,8 +21,10 @@ export default function Contact({data}) {
 
   return ( 
     <Layout title={t("contact")}>
-      <ContactForm label={t("contact_form_call")} formInfo={data.contact_form} />
-      <SocialMediaProfiles label={t("contact_profiles_call")} profiles={data.social_media.nodes} />
+      <div className="contact_content">
+        <ContactForm label={t("contact_form_call")} formInfo={data.contact_form} />
+        <SocialMediaProfiles label={t("contact_profiles_call")} profiles={data.social_media.nodes} />
+      </div>
     </Layout>
   )
 }
