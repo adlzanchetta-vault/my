@@ -5,6 +5,7 @@
     "contact": "Contato",
     "powered_by": "Movido a React, Gatsby, I18next, CSS grid, e café.",
     "home_content": "André Della Libera Zanchetta (adlzanchetta) atua como desenvolvedor web back-end junto à NModes, empresa especializada em desenvolvimento de chatbots. Ele possui doutorado em hidrologia e recursos hídricos pelo departamento de engenharia civil da McMaster University (Canada) e mestrado na mesma área pela Universidade de Iowa (Estados Unidos). Em ambos os programas de pós-graduacão seu tema de pesquisa foi direcionado ao campo de hidroinformática, no qual conhecimentos relacionados ao campo da tecnologia, como visualizacão de dados em ambientes web e inteligência artificial, são explorados no contexto de modelagem, predicão e comunicacão de fenômenos hidrológicos, como por exemplo enchentes.\n Ele tem familiaridade com diferentes linguagens de programacão (Javascript, Python, Java, C, PHP), domínio da língua inglesa e espanhola, e a capacidade de escrever sobre si mesmo em terceira pessoa. Ele gosta de aprender novas tecnologias enquanto produz e desenvolveu esta página como um exercício para conhercer CSS Grid, Flexbox e Gatsby.",
+    "under_construction": "Em construção",
 
     "cv_experience_title": "Experiência recente",
     "cv_experience_1_title": "Desenvolvedor web back-end",
@@ -20,7 +21,7 @@
     "cv_experience_3_location": "Iowa City - Iowa, Estados Unidos",
     "cv_experience_3_institution": "IIHR - Hydrosciences and engineering",
 
-    "cv_education_title": "Educaćão",
+    "cv_education_title": "Educação",
     "cv_education_1_title": "Doutorado | Engenharia civil",
     "cv_education_1_date": "Dezembro de 2022",
     "cv_education_1_location": "Hamilton - Ontario, Canada.",

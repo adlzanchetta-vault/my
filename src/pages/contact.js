@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
+
 import ContactForm from "../components/contact/ContactForm";
 import SocialMediaProfiles from "../components/contact/SocialMediaProfiles";
-
-import Layout from "./common/Layout";
+import BaseLayout from "../components/layout/BaseLayout";
 
 import "../styles/contact.css";
 
@@ -20,14 +20,15 @@ const PAGE_ID = "contact";
 export default function Contact({data}) {
  
   const { t } = useTranslation();  // used for showing
-
-  return ( 
-    <Layout title={t(PAGE_ID)} page_id={PAGE_ID} >
+  const { language, changeLanguage } = useI18next();
+  
+  return (
+    <BaseLayout title={t(PAGE_ID)} page_id={PAGE_ID} t={t} language={language} changeLanguage={changeLanguage}>
       <div className="contact_content">
         <ContactForm label={t("contact_form_call")} formInfo={data.contact_form} />
         <SocialMediaProfiles label={t("contact_profiles_call")} profiles={data.social_media.nodes} />
       </div>
-    </Layout>
+    </BaseLayout>
   )
 }
 

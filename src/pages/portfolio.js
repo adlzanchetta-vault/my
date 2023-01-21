@@ -1,21 +1,24 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 
-import Layout from "./common/Layout";
+import BaseLayout from "../components/layout/BaseLayout";
+
+import "../styles/portfolio.css";
 
 const PAGE_ID = "portfolio";
 
 export default function Portfolio() {
 
   const { t } = useTranslation();  // used for showing
- 
-  return ( 
-    <Layout title={t(PAGE_ID)} page_id={PAGE_ID}>
+  const { language, changeLanguage } = useI18next();
+  
+  return (
+    <BaseLayout title={t(PAGE_ID)} page_id={PAGE_ID} t={t} language={language} changeLanguage={changeLanguage}>
       <p>
-        TODO
+        {t("under_construction")}
       </p>
-    </Layout>
+    </BaseLayout>
   )
   
 }

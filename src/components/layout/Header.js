@@ -1,8 +1,7 @@
 import React from "react"
-import { graphql } from "gatsby"
-import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
+// import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 
-import "../../styles/header_grid.css";
+import "../../styles/header.css";
 import {stringToList} from "../../libs/general.js"
 
 // // CONS ////////////////////////////////////////////////////////////////////////////////////// //
@@ -23,8 +22,7 @@ const LANGUAGES = getLanguageDicts(
 
 // // Sub-Components //////////////////////////////////////////////////////////////////////////// //
 
-const PageListItem = ({className, page_id, in_page}) => {
-  const { t } = useTranslation();
+const PageListItem = ({className, page_id, in_page, t}) => {
   const pageClass = ((page_id && (page_id === in_page)) ? (` selected`) : (``));
   return (
     <li className={`${className}${pageClass}`}>
@@ -33,18 +31,18 @@ const PageListItem = ({className, page_id, in_page}) => {
   )
 }
 
-function PagesListing ({page_id}) {
+function PagesListing ({page_id, t}) {
 
   return (
   <ul className="menu-pages-list">
-    <PageListItem className="mid" page_id={"portfolio"} in_page={page_id} />
-    <PageListItem className="mid" page_id={"cv"} in_page={page_id} />
-    <PageListItem className="last" page_id={"contact"} in_page={page_id} />
+    <PageListItem className="mid" page_id={"portfolio"} in_page={page_id} t={t} />
+    <PageListItem className="mid" page_id={"cv"} in_page={page_id} t={t} />
+    <PageListItem className="last" page_id={"contact"} in_page={page_id} t={t} />
   </ul>);
 }
 
-function LanguageListing () {
-  const { language, changeLanguage } = useI18next();
+function LanguageListing ({ language, changeLanguage }) {
+  // const { language, changeLanguage } = useI18next();
 
   const loggedLangChange = (lang) => {
     return () => { changeLanguage(lang); }
@@ -81,10 +79,7 @@ function LanguageListing () {
 
 // // COMPONENTS //////////////////////////////////////////////////////////////////////////////// //
 
-export default function HeaderGrid({ page_id }) {
-
-  // set up hooks
-  const { language } = useI18next();
+export default function Header({ page_id, t, language, changeLanguage }) {
 
   return (
     <header>
@@ -100,31 +95,14 @@ export default function HeaderGrid({ page_id }) {
         <nav>
           <div className="menu-pages" >
             <span>Menu</span>
-            <PagesListing page_id={page_id} />
+            <PagesListing page_id={page_id} t={t} />
           </div>
           <div className="menu-language" >
             {`[${language.toUpperCase()}]`}
-            <LanguageListing />
+            <LanguageListing language={language} changeLanguage={changeLanguage} />
           </div>
         </nav>
       </div>
     </header>
   );
 }
-
-
-// this commands defines how the GraphQL query must be executed
-// must be present is all pages that use i18next
-export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;

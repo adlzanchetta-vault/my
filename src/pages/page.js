@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 
-import Layout from "./common/Layout";
+import BaseLayout from "../components/layout/BaseLayout";
 
 import "../styles/page.css";
 
@@ -16,15 +16,16 @@ const processHomeText = (rawHomeText) => {
 export default function Page() {
 
   const { t } = useTranslation();  // used for showing
+  const { language, changeLanguage } = useI18next();
 
   return ( 
-    <Layout page_id={PAGE_ID}>
+    <BaseLayout page_id={PAGE_ID} t={t} language={language} changeLanguage={changeLanguage}>
       <img src={`${process.env.GATSBY_BASE_URL}imgs/andre_horizontal.jpg`}
            className="home_pic"
            alt="Andre's face" />
       <h1>{t(PAGE_ID)}</h1>
       {processHomeText(t("home_content"))}
-    </Layout>
+    </BaseLayout>
   )
 }
 

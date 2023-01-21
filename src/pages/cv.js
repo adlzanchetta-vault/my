@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useTranslation, useI18next } from "gatsby-plugin-react-i18next";
 
-import Layout from "./common/Layout";
+import BaseLayout from "../components/layout/BaseLayout";
 
 import "../styles/cv.css";
 
@@ -28,17 +28,17 @@ const CVsectionGeneric = (props) => {
     
     // 
     if (i18n.exists(`${curPrefix}_date`)) {
-      retItems.push(<p><em>{t(`${curPrefix}_date`)}</em></p>);
+      retItems.push(<p className="no-vertical-padding"><em>{t(`${curPrefix}_date`)}</em></p>);
     }
 
     // 
     if (i18n.exists(`${curPrefix}_institution`)) {
-      retItems.push(<p>{t(`${curPrefix}_institution`)}</p>);
+      retItems.push(<p className="no-vertical-padding">{t(`${curPrefix}_institution`)}</p>);
     }
 
     // 
     if (i18n.exists(`${curPrefix}_location`)) {
-      retItems.push(<p className="last" >{t(`${curPrefix}_location`)}</p>);
+      retItems.push(<p className="no-vertical-padding last" >{t(`${curPrefix}_location`)}</p>);
     }
 
     curEntry += 1;
@@ -107,14 +107,15 @@ const CVsectionPublications = ({publications}) => {
 export default function Cv({data}) {
 
   const { t } = useTranslation();  // used for showing
- 
-  return ( 
-    <Layout title={t(PAGE_ID)} page_id={PAGE_ID}>
+  const { language, changeLanguage } = useI18next();
+  
+  return (
+    <BaseLayout title={t(PAGE_ID)} page_id={PAGE_ID} t={t} language={language} changeLanguage={changeLanguage}>
       <CVsectionGeneric sectionPrefix="experience" />
       <CVsectionGeneric sectionPrefix="education" />
       <CVsectionPublications publications={data.publication.nodes} />
-    </Layout>
-  )
+    </BaseLayout>
+  );
   
 }
 

@@ -5,13 +5,18 @@ div.content h2 {
 }
 
 div.content h3 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-left: 2.0rem;
 }
 
 div.content p {
     margin-left: 2.0rem;
     margin-right: 1.0rem;
+}
+
+div.content p.no-vertical-padding {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
     font-size: 0.8rem;
 }
 
