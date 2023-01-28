@@ -17,25 +17,19 @@ header div.container {
 }
 
 header div.container h1 {
-    font-size: 1em;
+    font-size: 1.2rem;
     line-height: 1.57em;
     grid-column: 1;      /* position */
     justify-self: left;  /* position */
 }
 
 header div.container h1 a.big-name {
+    font-family: 'Cinzel', serif;
     display: block;
 }
 
 header div.container h1 a.small-name {
-    display: none;
-}
-
-header div.container h1 a.big-name {
-    display: block;
-}
-
-header div.container h1 a.small-name {
+    font-family: 'Cinzel', serif;
     display: none;
 }
 
@@ -55,7 +49,7 @@ header div.container li.selected a {
 }
 
 /* small screen: drop down menu */
-@media screen and (max-width: 30rem) {
+@media screen and (max-width: 32rem) {
     
     header div.container h1 a.big-name {
         display: none;
@@ -125,7 +119,7 @@ div.menu-pages span {
 
 
 /* small screen: drop down menu */
-@media screen and (max-width: 38rem) {
+@media screen and (max-width: 42rem) {
 
     /* "menu" button */
     div.menu-pages span {

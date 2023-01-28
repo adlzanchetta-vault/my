@@ -35,6 +35,7 @@ function PagesListing ({page_id, t}) {
 
   return (
   <ul className="menu-pages-list">
+    <PageListItem className="mid" page_id={"page"} in_page={page_id} t={t} />
     <PageListItem className="mid" page_id={"portfolio"} in_page={page_id} t={t} />
     <PageListItem className="mid" page_id={"cv"} in_page={page_id} t={t} />
     <PageListItem className="last" page_id={"contact"} in_page={page_id} t={t} />

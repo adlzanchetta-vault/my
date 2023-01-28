@@ -23,7 +23,6 @@ export default function Page() {
       <img src={`${process.env.GATSBY_BASE_URL}imgs/andre_horizontal.jpg`}
            className="home_pic"
            alt="Andre's face" />
-      <h1>{t(PAGE_ID)}</h1>
       {processHomeText(t("home_content"))}
     </BaseLayout>
   )
