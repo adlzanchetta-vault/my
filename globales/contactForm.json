@@ -1,8 +1,0 @@
-{
-    "contactForm_method": "post",
-    "contactForm_action": "https://getform.io/f/a111988f-7f80-496e-9d15-91f775350087",
-    "contactForm_sender_name_field": "contact-form-name",
-    "contactForm_sender_email_field": "contact-form-email",
-    "contactForm_sender_phone_field": "contact-form-phone",
-    "contactForm_sender_message": "contact-form-message"
-}
